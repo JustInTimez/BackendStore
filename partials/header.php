@@ -13,8 +13,8 @@ include __DIR__ . "/head.php";
 
 <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark p-3 text-center">
-        <a class="navbar-brand">**Logo here**</a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-secondary p-3 text-center">
+        <a class="navbar-brand">**Logo OR text here**</a>
         <button class="navbar-toggler text-center" type="button" data-bs-target="#navCollapse" data-bs-toggle="collapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,19 +23,19 @@ include __DIR__ . "/head.php";
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="./home.php">View Hotels</a>
+                    <a class="nav-link" href="./home.php">Games!</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./view-bookings.php">View Bookings</a>  
+                    <a class="nav-link" href="#">Orders</a>  
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./edit-profile.php">Edit Profile</a>
+                    <a class="nav-link" href="#">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./cms.php">Queries</a>
+                    <a class="nav-link" href="#">Queries</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./logout.php">Logout</a>
+                    <a class="nav-link" href="#">Logout</a>
                 </li>
             </ul>
 
