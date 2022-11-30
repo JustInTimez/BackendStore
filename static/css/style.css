@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 20px;
+    min-height: 100vh;
+    background-color: red;
+}
+
+/* Footer section */
+
+.text {
+    color: white;
+}
+
+#githubIcon {
+    margin: 20px;
+}
+
+footer {
+    background-color: #212529;
+    width: 100%;
+}
