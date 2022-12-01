@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include __DIR__ . "/partials/header.php";
+<?php include __DIR__ . "/partials/head.php";
 
 
 // Check if the user is already logged in, if yes then redirect them to homepage
@@ -12,27 +12,21 @@
 
 ?>
 
+<header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+        <a class="navbar-brand">WANT GAMES? Log in or register to get access!</a>
+    </nav>
+    <!-- Navbar END -->
+
+</header>
+
 <body>
+    
+    <h1 class="text-center">Register or Login</h1>
 
-    <main>
-        <!-- Hero -->
-        <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
-            <div class="container mt-5">
-                <h1 class="mb-3 mt-5">Looking for GAMES?</h1>
-                <p class="mb-3">Check our offerings for PC, XBOX and Playstation!</p>
-            </div>
-        </div>
-        <!-- Hero END -->
-
-        <!-- Cards: Hotels -->
-        <div class="row row-cols-1 row-cols-lg-3 g-5 m-0">
-            <? Hotel::getAllHotels(); ?>
-        </div>
-        <!-- Cards: Hotels END -->
-
-    </main>
-
-    <!-- <div class="container text-center">
+    <div class="container text-center">
         <div class="row">
             <div class="col-lg-6">Register:
                 <form action="./processes/process-register.php" method="post">
@@ -56,7 +50,7 @@
                 </form>
             </div>
 
-            <div class="col-lg-6">Customer/Staff Login:
+            <div class="col-lg-6">Login:
                 <form action="./processes/process-login.php" method="post">
                     <div class="mb-3">
                         <label for="InputEmail" class="form-label">Email*</label>
@@ -71,7 +65,7 @@
             </div>
         </div>
         <p>* Indicates required field</p>
-    </div> -->
+    </div>
 
     <?php include __DIR__ . "/partials/footer.php"; ?>
 
