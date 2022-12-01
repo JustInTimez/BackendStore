@@ -9,7 +9,6 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-gap: 20px;
     min-height: 100vh;
-    background-color: red;
 }
 
 /* Footer section */
