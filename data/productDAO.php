@@ -2,7 +2,7 @@
 
 include __DIR__ . "/config.php"; 
 
-class productDAO {
+class ProductDAO {
 
 
 
