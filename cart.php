@@ -6,7 +6,7 @@
 
 // Check if the user is already logged in, if yes then redirect them to homepage
 // if (isset($_SESSION["LoggedInUser"]) && $_SESSION["LoggedInUser"] === true) {
-//     header("location: ./home.php");
+//     header("location: ./login.php");
 //     exit;
 // }
 
