@@ -18,8 +18,8 @@
         <!-- Hero -->
         <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
             <div class="container mt-5">
-                <h1 class="mb-3 mt-5">Looking for some games?</h1>
-                <p class="mb-3">Check out our offerings below!</p>
+                <h1 class="mb-3 mt-5">Buy Games Online!</h1>
+                <p class="mb-3">We have games for PS, XBOX & PC!</p>
             </div>
         </div>
         <!-- Hero END -->
