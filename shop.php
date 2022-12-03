@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include __DIR__ . "/partials/header.php";
+<?php 
+include __DIR__ . "/partials/header.php";
+include __DIR__ . "/model/Product.php";
 
 ?>
 
@@ -19,7 +21,7 @@
 
         <!-- Cards: Display Games -->
         <div class="row row-cols-1 row-cols-lg-3 g-5 m-0">
-            
+            <? var_dump(Product::getAllProducts($id)) ; ?>
         </div>
         <!-- Cards: Display Games END -->
     </main>
