@@ -28,6 +28,8 @@ include __DIR__ . "/head.php";
                 <li class="nav-item">
                     <a class="nav-link" href="./about.php">About Us</a>  
                 </li>
+                <!-- TODO: Change this to a dropdown later, with the 3 different categories. 
+                So it will be separate shop pages but just with the selected category only (https://getbootstrap.com/docs/5.2/components/navbar/) -->
                 <li class="nav-item">
                     <a class="nav-link" href="./shop.php">E-Shop!</a>
                 </li>
