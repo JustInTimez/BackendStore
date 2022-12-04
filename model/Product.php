@@ -40,28 +40,9 @@ class Product {
 
     // ========================= METHODS =========================
 
-    public static function getAllProducts($id) {
-        $product = ProductDAO::fetchProduct($id);
-        if ($product) {
-            while ($row = $product) {
-                $product = new Product($row['id']);
-
-                return $product;
-
-            }
-            
-
-
-
-        }
-
-
-
-
-
-
+    public static function getAllProducts() {
+        return ProductDAO::fetchAllProducts();
     }
-
 
 
 
