@@ -34,21 +34,22 @@ $productID = Product::getAllProducts();
 
                     <div class="col-xl-4 col-md-6">
                     <div class="card border-dark bg-dark text-white shadow h-100">
-                        <img src="./static/images/products/<?= $product->image ?>" height="270" class="card-img-top product-image" alt="<?= $product->name ?>">
+                        <img src="./static/images/products/<?= $product->getImage() ?>" height="600" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $product->name ?></h5>
+                            <h5 class="card-title"><?= $product->getName() ?></h5>
                                 <div class="d-flex" >
                                     <div class="d-flex flex-column">
                                         
                                         <div class="mt-5">
                                             <form action="" method="post">
-                                                <input type="hidden" name="productId" value="<?= $product->id ?>">
-                                                <button type="submit" name="Submit" class="btn btn-light"><i>Book!</i></button>
+                                                <input type="hidden" name="productId" value="<?= $product->getId() ?>">
+                                                <button type="submit" name="Submit" class="btn btn-light"><i>Details</i></button>
+                                                <button type="submit" name="AddCart" class="btn btn-primary"><i>Add to Cart</i></button>
                                             </form>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
-                                        <p class="display-5 lh-1 mb-1"><?= $product->price ?></p><span class="small mb-0"><?= $product->rating ?></span>
+                                        <p class="display-5 lh-1 mb-1">R <?= $product->getPrice() ?></p><span class="small mb-0"><?= $product->getRating() ?></span>
                                     </div>
                                 </div>
                         </div>
@@ -57,7 +58,7 @@ $productID = Product::getAllProducts();
 
                 <?php endforeach ?>
                 <?php else: ?>
-                    Uhhhh
+                    <h2>Sorry, the request could not be completed. Refresh your browser</h2>
             <?php endif ?>
         </div>
         <!-- Cards: Display Games END -->
