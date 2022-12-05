@@ -20,9 +20,6 @@ class User {
 
     public function __construct($id, $fname, $lname, $email, $password, $contact_no, $dob){
 
-        // Call to DAO
-        // $stmt = UserDAO::fetchUser($id);
-
         $this->id = $id;
         $this->fname = $fname;
         $this->lname = $lname;
