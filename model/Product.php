@@ -19,6 +19,7 @@ class Product {
     private $is_pc;
     private $is_xbox;
     private $is_ps;
+    private $stock;
 
 
     public function __construct($id){
@@ -36,6 +37,7 @@ class Product {
         $this->is_pc = $product['is_pc'];
         $this->is_xbox = $product['is_xbox'];
         $this->is_ps = $product['is_ps'];
+        $this->stock = $product['stock'];
     }
 
     // ========================= METHODS =========================
@@ -173,6 +175,18 @@ class Product {
     public function setIs_ps($is_ps)
     {
         $this->is_ps = $is_ps;
+
+        return $this;
+    }
+
+    public function getStock()
+    {
+        return $this->stock;
+    }
+
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
 
         return $this;
     }
