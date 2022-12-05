@@ -42,13 +42,20 @@ class User {
             
         echo "New user created successfully";
 
-        header("Location: ../index.php");
+        header("Location: ../shop.php");
         exit();
 
         }
     }
 
+    public static function userLogin() {
 
+
+
+
+
+        
+    }
 
 
 

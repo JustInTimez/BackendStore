@@ -37,6 +37,9 @@ $productID = Product::getAllProducts();
                         <img src="./static/images/products/<?= $product->getImage() ?>" height="600" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?= $product->getName() ?></h5>
+                                <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
+                                    <p class="display-7 lh-1 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
+                                </div>
                                 <div class="d-flex" >
                                     <div class="d-flex flex-column">
                                         
