@@ -40,8 +40,6 @@ class UserDAO {
         $result = $stmt->get_result();
         $userLogin = $result->fetch_assoc();
         return $userLogin;
-
-
     }
 
     public static function createUser() {
@@ -87,8 +85,6 @@ class UserDAO {
 
             header("Location: ../login.php");
             exit();
-
-
         }
         
     }
