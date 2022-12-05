@@ -49,16 +49,23 @@ class User {
     }
 
     public static function userLogin() {
-
-
-
-
-
+        $userLogin = UserDAO::fetchLogin();
         
+        if ($userLogin == true) {
+            
+        echo "Matched password, logging in...";
+
+        header("Location: ../shop.php");
+        exit();
+
+        }
     }
 
-
-
+    public static function userLogout() {
+        if(session_destroy()) {
+            header("Location: ./login.php");
+         }
+    }
 
 
 

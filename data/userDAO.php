@@ -26,13 +26,20 @@ class UserDAO {
     public static function fetchLogin() {
         global $connect;
 
+        // Grab login form POST inputs
+        $email = trim($_POST['LoginEmail']);
+        $password = trim($_POST['LoginPassword']);
+
         // Begin prepare statement
-        $sql = $connect->prepare("SELECT * FROM users WHERE password = ?");
+        $sql = "SELECT * FROM users WHERE password = ?";
+        $stmt = $connect->prepare($sql);
 
-
-
-
-
+        // Bind passed variable to prepare statement
+        $stmt->bind_param("s", $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $userLogin = $result->fetch_assoc();
+        return $userLogin;
 
 
     }
@@ -49,9 +56,11 @@ class UserDAO {
         // Begin prepare statement
         $sql = "INSERT INTO users (fname, lname, email, password) VALUES (?, ?, ?, ?)";
         $stmt = $connect->prepare($sql);
+
+        // Bind passed variable to prepare statement
         $stmt->bind_param("ssss", $fname, $lname, $email, $password);
         
-        // Check if user was added to db and then redirect appropriately
+        // Check if user was added to table and then redirect appropriately
         if ($stmt->execute() === TRUE){
 
             $sql = "SELECT * FROM users WHERE password = '" . $password . "'";
