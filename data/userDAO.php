@@ -23,8 +23,24 @@ class UserDAO {
         return $user;
     }
 
+    public static function fetchLogin() {
+        global $connect;
+
+        // Begin prepare statement
+        $sql = $connect->prepare("SELECT * FROM users WHERE password = ?");
+
+
+
+
+
+
+
+    }
+
     public static function createUser() {
         global $connect;
+
+        // Grab register form POST inputs
         $fname = trim($_POST['RegInputName']);
         $lname = trim($_POST['RegInputSurname']);
         $email = trim($_POST['RegInputEmail']);
