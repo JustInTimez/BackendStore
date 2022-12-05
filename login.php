@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-lg-6">Login:
-                <form action="/processing/process-login.php" method="post">
+                <form action="./processing/process-login.php" method="post">
                     <div class="mb-3">
                         <label for="InputEmail" class="form-label">Email*</label>
                         <input type="email" class="form-control" name="LoginEmail" id="InputEmail" required>
