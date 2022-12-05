@@ -13,9 +13,22 @@ body {
 }
 
 
-/* .product-image {
+.gameGenre {
+    font-size: 14px;
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 3px 8px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 16px;
+    margin: 0;
+    margin-left: 6px;
+  }
+
+.product-image {
     object-fit: cover;
-} */
+}
 
 
 /* Footer section */
