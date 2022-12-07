@@ -70,10 +70,16 @@ include __DIR__ . "/model/Product.php";
                             </tr>
                         <?php endforeach ?>
                     <?php else : ?>
-                        <h2>Sorry, there's nothing in yo cart ATM!</h2>
+                        <h2>Your 🛒 is empty...</h2>
                     <?php endif ?>
                 </tbody>
             </table>
+            <form action="./processing/clear-cart.php" method="post">
+                <input type="hidden" name="cart" value="">
+                <button type="submit" name="Submit" class="btn btn-primary">
+                    Clear Cart
+                </button>
+            </form>
         </div>
     </main>
 

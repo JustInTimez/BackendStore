@@ -18,7 +18,7 @@
         <!-- Hero -->
         <div class="jumbotron mt-5 p-3 p-md-5 text-white bg-dark">
             <div class="col-md-12 px-0">
-                <h1 class="display-4">Looking for some <i>games?</i></h1>
+                <h1 class="display-4">Looking for some <i>games?</i> 😎</h1>
                 <p class="lead my-3">Welcome to the <b>best</b> place to find GAMES!</p>
             </div>
         </div>
