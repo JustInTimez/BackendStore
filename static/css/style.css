@@ -30,6 +30,20 @@ body {
     object-fit: cover;
 }
 
+.maps-container{
+    text-align:center;
+    overflow: hidden;
+}
+
+.maps-container iframe{
+    height: 300px;
+    width: 100%;
+    /* position:absolute; */
+}
+
+.google-map {
+    display: absolute;
+}
 
 /* Footer section */
 
