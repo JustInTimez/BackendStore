@@ -51,12 +51,12 @@ $_SESSION['Cart'];
                                 <td></td>
                                 <td></td>
                                 <td>R </td>
-                                <td><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#cancelModal' . $hotel->id . '">
+                                <td><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#cancelModal' . $product->id . '">
                                         Cancel?
                                     </button></td>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="cancelModal' . $hotel->id . '" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                                <div class="modal fade" id="cancelModal' . $product->id . '" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <form action="./processing/" method="post">

@@ -9,13 +9,66 @@
 <body>
     <main>
         <!-- Hero -->
-        <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
+        <div class="jumbotron mt-5 p-3 p-md-5 text-dark bg-light">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4">About <i>Us</i></h1>
+                <p class="lead my-3">Wut? You <i>really</i> wanna find out more about us?</p>
+            </div>
+        </div>
+        <!-- <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
             <div class="container mt-5">
                 <h1 class="mb-3 mt-5">About Us</h1>
                 <p class="mb-3">Some snazzy punchline?</p>
             </div>
-        </div>
+        </div> -->
         <!-- Hero END -->
+        <div class="col-md-12 ">
+            <h2 class="mt-3 text-center border-bottom">
+                We love digital <i>games</i>!
+                </h2>
+
+                <div class="px-3">
+                    <h2 class="blog-post-title">The Company:</h2>
+
+                    <p>Our company was born in 2018. With a passion for games and online entertainment, we decided to create our own online store for gamers! We currently offer games from:</p>
+                    <ul>
+                        <li>Steam/PC/Microsoft</li>
+                        <li>XBOX 360, XBOX ONE</li>
+                        <li>Playstation 4, Playstation 5</li>
+                    </ul>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                    <h3>ADD MISSION AND VISION STATEMENTS BELOW HERE</h3>
+                </div>
+
+                <!-- TODO: Something with these are making a horizontal scroll available on page. Need to find the cause and fix -->
+                <div class="row px-3">
+                    <div class="col-md-6">
+                        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                            <div class="card-body d-flex flex-column align-items-start">
+                                <strong class="d-inline-block mb-2 text-primary">Owner</strong>
+                                <h3 class="mb-0">
+                                    <p class="text-dark">Justin</p>
+                                </h3>
+                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                            <div class="card-body d-flex flex-column align-items-start">
+                                <strong class="d-inline-block mb-2 text-success">Logistics</strong>
+                                <h3 class="mb-0">
+                                    <p class="text-dark">Justin</p>
+                                </h3>
+                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+                        </div>
+                    </div>
+                </div>
+        </div>
 
     </main>
 
