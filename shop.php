@@ -16,10 +16,10 @@ $productID = Product::getAllProducts();
 <body>
     <main>
         <!-- Hero -->
-        <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
-            <div class="container mt-5">
-                <h1 class="mb-3 mt-5">Buy Games Online!</h1>
-                <p class="mb-3">We have games for PS, XBOX & PC!</p>
+        <div class="jumbotron mt-5 p-3 p-md-5 text-white bg-dark">
+            <div class="col-md-12 px-0">
+                <h1 class="display-4">Buy Games<i> Online!</i> 🌎</h1>
+                <p class="lead my-3">We have games for <b>PS, XBOX & PC!</b></p>
             </div>
         </div>
         <!-- Hero END -->
