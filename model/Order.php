@@ -40,7 +40,11 @@ class Order {
     }
 
     public static function displayCart() {
-        return ($_SESSION['Cart']);
+        if (empty($_SESSION['Cart'])) {
+            echo "You have nothing in your cart yet!";
+        } else {
+            return ($_SESSION['Cart']);
+        }
     }
 
     public static function removeItem() {
@@ -53,7 +57,14 @@ class Order {
 
     }
 
+    public static function clearCart() {
+        unset($_SESSION['Cart']);
 
+        header("Location: ../cart.php");
+        exit();
+
+
+    }
 
 
 

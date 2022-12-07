@@ -12,7 +12,7 @@
         <div class="jumbotron mt-5 p-3 p-md-5 text-dark bg-light">
             <div class="col-md-6 px-0">
                 <h1 class="display-4">About <i>Us</i></h1>
-                <p class="lead my-3">Wut? You <i>really</i> wanna find out more about us?</p>
+                <p class="lead my-3">Wut? You <i>really</i> wanna find out more about us? 🤣</p>
             </div>
         </div>
         <!-- <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">

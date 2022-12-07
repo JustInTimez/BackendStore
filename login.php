@@ -18,7 +18,7 @@
     <!-- Hero -->
     <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
         <div class="container mt-5">
-            <h1 class="mb-3 mt-5">So, you want in, huh?</h1>
+            <h1 class="mb-3 mt-5">So, you want in, huh? 🤣</h1>
             <p class="mb-3">Great choice. I like your style!</p>
         </div>
     </div>

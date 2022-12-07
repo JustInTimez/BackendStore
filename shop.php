@@ -41,9 +41,11 @@ $productID = Product::getAllProducts();
                                 <div class="d-flex">
                                     <div class="d-flex flex-column">
                                         <div class="mt-5">
-                                            <input type="hidden" name="productId" value="<?= $product->getId() ?>">
-                                            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#productModal<?= $product->getId() ?>"><i>Details</i></button>
-                                            <button type="submit" name="AddCart" class="btn btn-primary"><i>Add to Cart</i></button>
+                                            <form action="./processing/process-session.php" method="post">
+                                                <input type="hidden" name="productId" value="<?= $product->getId() ?>">
+                                                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#productModal<?= $product->getId() ?>"><i>Details</i></button>
+                                                <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? '<b>Already in!</b>' : "Add to Cart" ?></i></button>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
