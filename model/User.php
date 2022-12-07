@@ -35,12 +35,14 @@ class User {
     public static function userRegister() {
         $result = UserDAO::createUser();
         
-        if ($result == true) {
-            
-        echo "New user created successfully";
+        if ($result) {
+            $_SESSION['LoggedInUser'] = $result;
+            $_SESSION['Cart'] = [];
 
-        header("Location: ../shop.php");
-        exit();
+            echo "New user created successfully";
+
+            header("Location: ../shop.php");
+            exit();
 
         }
     }
@@ -49,11 +51,13 @@ class User {
         $userLogin = UserDAO::fetchLogin();
         
         if ($userLogin == true) {
-            
-        echo "Matched password, logging in...";
+            $_SESSION['LoggedInUser'] = $userLogin;
+            $_SESSION['Cart'] = [];
 
-        header("Location: ../shop.php");
-        exit();
+            echo "Matched password, logging in...";
+
+            header("Location: ../shop.php");
+            exit();
 
         }
     }

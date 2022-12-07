@@ -30,17 +30,28 @@ class Order {
 
     public static function addToCart() {
         $productId = $_POST['productId'];
-        $_SESSION['Cart'][] = $productId;
+        if (!in_array($productId, $_SESSION['Cart'])) {
+            
+            array_push($_SESSION['Cart'], $productId);
+        }
 
         header("Location: ../cart.php");
         exit();
     }
 
-    // public static function displayCart() {
-    //     return ($_SESSION['Cart']);
-    // }
+    public static function displayCart() {
+        return ($_SESSION['Cart']);
+    }
 
+    public static function removeItem() {
+        $prodId = $_POST['productId'];
 
+        unset($_SESSION['Cart'][$prodId]);
+
+        header("Location: ../cart.php");
+        exit();
+
+    }
 
 
 

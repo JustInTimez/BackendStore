@@ -19,7 +19,7 @@
         <!-- Hero -->
         <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
             <div class="container mt-5">
-                <h1 class="mb-3 mt-5">About Us</h1>
+                <h1 class="mb-3 mt-5">Contact Us</h1>
                 <p class="mb-3">Some snazzy punchline?</p>
             </div>
         </div>

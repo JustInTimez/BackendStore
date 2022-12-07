@@ -81,7 +81,7 @@ $productID = Product::getAllProducts();
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nah, lemme see the others...</button>
-                                        <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                        <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? 'Already in!' : "Add to Cart" ?></i></button>
                                     </div>
                                 </form>
 
