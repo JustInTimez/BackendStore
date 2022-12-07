@@ -22,6 +22,7 @@
                 <p class="lead my-3">Welcome to the <b>best</b> place to find GAMES!</p>
             </div>
         </div>
+        <!-- Hero END -->
 
         <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
             <div class="container">
@@ -29,8 +30,6 @@
                 <p class="mb-3">I don't know why you'd look anywhere else - Kahjiit 😺 has <a href="./shop.php">wares if you have coin</a>. . .</p>
             </div>
         </div>
-
-        <!-- Hero END -->
 
         <!-- Featured GAMES Display -->
         <h3 class="mb-3 mt-3 text-center display-6">Check out our <i>FEATURED</i> games!</h1>

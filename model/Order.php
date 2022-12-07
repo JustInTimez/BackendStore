@@ -58,6 +58,8 @@ class Order {
     }
 
     public static function clearCart() {
+
+        // This seems to destroy session and "logs out" - to fix
         unset($_SESSION['Cart']);
 
         header("Location: ../cart.php");
