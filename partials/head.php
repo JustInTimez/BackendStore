@@ -1,7 +1,7 @@
 <?php
 // include __DIR__ . "./processes/sessions.php";
 session_start();
-
+$_SESSION['Cart'] = [];
 ?>
 
 <head>

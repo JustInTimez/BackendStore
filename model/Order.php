@@ -28,16 +28,17 @@ class Order {
 
     // ========================= METHODS =========================
 
-    public static function userOrder() {
+    public static function addToCart() {
+        $productId = $_POST['productId'];
+        $_SESSION['Cart'][] = $productId;
 
-
-
-
-
-        
+        header("Location: ../cart.php");
+        exit();
     }
 
-
+    // public static function displayCart() {
+    //     return ($_SESSION['Cart']);
+    // }
 
 
 
@@ -55,7 +56,51 @@ class Order {
 
     // ==================== GETTERS & SETTERS ====================
 
+    public function getOrder_id()
+    {
+        return $this->order_id;
+    }
 
+    public function setOrder_id($order_id)
+    {
+        $this->order_id = $order_id;
 
+        return $this;
+    }
 
+    public function getCustomer_id()
+    {
+        return $this->customer_id;
+    }
+
+    public function setCustomer_id($customer_id)
+    {
+        $this->customer_id = $customer_id;
+
+        return $this;
+    }
+
+    public function getProduct_id()
+    {
+        return $this->product_id;
+    }
+
+    public function setProduct_id($product_id)
+    {
+        $this->product_id = $product_id;
+
+        return $this;
+    }
+
+    public function getBuy_date()
+    {
+        return $this->buy_date;
+    }
+
+    public function setBuy_date($buy_date)
+    {
+        $this->buy_date = $buy_date;
+
+        return $this;
+    }
 }
