@@ -50,15 +50,16 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                     <?php $product = new Product($id['id']); ?>
 
                     <div class="col-xl-4 col-md-6">
-                        <div class="card border-dark bg-dark text-white shadow h-100">
+                        <div class="card border-dark bg-dark text-white shadow card-size">
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
-                                <h5 class="card-title"><?= $product->getName() ?></h5><span class="small mb-0"><?= $product->getRating() ?></span>
+                                <h5 class="card-title text-center"><?= $product->getName() ?> </h5><span class="small mb-0 text-center"><?= $product->getRating() ?> <i class="fa-solid fa-star"></i></span>
                                 <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
-                                    <p class="display-7 lh-1 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
+                                    <p class="display-7 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
                                 </div>
-                                <div class="d-flex">
-                                    <div class="d-flex flex-column">
+                                <p class="display-5 mb-1 text-center">R <?= $product->getPrice() ?></p>
+                                <div class="">
+                                    <div class="d-flex justify-content-between">
                                         <div class="mt-5">
                                             <form action="./processing/process-session.php" method="post">
                                                 <input type="hidden" name="productId" value="<?= $product->getId() ?>">
@@ -66,9 +67,6 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                                                 <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? '<b>Already in!</b>' : "Add to Cart" ?></i></button>
                                             </form>
                                         </div>
-                                    </div>
-                                    <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
-                                        <p class="display-5 lh-1 mb-1">R <?= $product->getPrice() ?></p><span class="small mb-0"><?= $product->getRating() ?></span>
                                     </div>
                                 </div>
                             </div>

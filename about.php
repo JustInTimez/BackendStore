@@ -19,7 +19,7 @@
 
         <div class="col-md-12 ">
             <h2 class="mb-3 mt-3 text-center">
-                We love digital <i>games</i>!
+                We dig digital <i>games. GG</i>!
             </h2>
                 <div class="px-3">
                     <h2 class="blog-post-title">The Company:</h2>
@@ -30,35 +30,41 @@
                         <li>XBOX 360, XBOX ONE</li>
                         <li>Playstation 4, Playstation 5</li>
                     </ul>
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-                    <h3>ADD MISSION AND VISION STATEMENTS BELOW HERE</h3>
+
+                    <h3>COMPANY MISSION STATEMENT</h3>
+                    <p>Our mission is simple - to become the Ultimate Pokemon Champion! <em>Gotta catch 'em all!</em></p>
+                    <p>Seriously - we want to bring digital goods (games) as easily to our users as possible.</p>
+                    <p>This allows for instant game codes instead of having to drive to your nearest stockist!</p>
+
+
+                    <h3>COMPANY VISION STATEMENT</h3>
+                    <p>We have a pretty strong Charizard with us...  <em>Use Flamethrower!</em></p>
+                    <p>Again, Seriously - Our vision is to keep doing our best in bringing competitive prices at super awesome convienence! </p>
                 </div>
 
-                <!-- TODO: Something with these are making a horizontal scroll available on page. Need to find the cause and fix -->
                 <div class="row container-fluid">
                     <div class="col-md-6">
                         <div class="card flex-md-row mb-4 box-shadow h-md-250">
                             <div class="card-body d-flex flex-column align-items-start">
-                                <strong class="d-inline-block mb-2 text-primary">Owner</strong>
+                                <strong class="d-inline-block mb-2 slogan-text">Owner</strong>
                                 <h3 class="mb-0">
                                     <p class="text-dark">Justin</p>
                                 </h3>
-                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text mb-auto">Handles all things business like! Keeps up with all stakeholders and ensures the company is doing right by the books </p>
                             </div>
                             <img src="https://picsum.photos/id/1/200/200" class="card-img-right flex-auto d-none d-md-block" alt="Justin working">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                            <div class="card-body d-flex flex-column align-items-start">
-                                <strong class="d-inline-block mb-2 text-success">Logistics</strong>
+                            <div class="card-body d-flex flex-column align-items-end">
+                                <strong class="d-inline-block mb-2 text-secondary">Logistics</strong>
                                 <h3 class="mb-0">
                                     <p class="text-dark">Justin</p>
                                 </h3>
-                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text mb-auto">This bloke handles all the other stuff - campaigns, the website, marketing media... Everything to throw it all out there for users to discover us!</p>
                             </div>
-                            <img src="https://picsum.photos/id/5/200/200" class="card-img-right flex-auto d-none d-md-block" alt="Justin working more">
+                            <img src="https://picsum.photos/id/5/200/200" class="card-img-left flex-auto d-none d-md-block" alt="Justin working more">
                         </div>
                     </div>
                 </div>

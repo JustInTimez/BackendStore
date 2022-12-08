@@ -73,6 +73,31 @@ include __DIR__ . "/model/Product.php";
                         <h2>Your 🛒 is empty...</h2>
                     <?php endif ?>
                 </tbody>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>R </td>
+                            <td>
+                                <form action="./processing/cart-pay.php" method="post">
+                                    <input type="hidden" name="productId" value="">
+                                    <button type="submit" name="Submit" class="btn btn-light">
+                                        Pay
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                </thead>
             </table>
             <form action="./processing/clear-cart.php" method="post">
                 <input type="hidden" name="cart" value="">

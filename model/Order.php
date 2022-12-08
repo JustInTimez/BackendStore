@@ -47,6 +47,13 @@ class Order {
         }
     }
 
+    public static function cartTotal() {
+
+
+
+
+    }
+
     public static function removeItem() {
         $prodId = $_POST['productId'];
         $index = array_search($prodId, $_SESSION['Cart']);
