@@ -39,6 +39,10 @@ class UserDAO {
         $stmt->execute();
         $result = $stmt->get_result();
         $userLogin = $result->fetch_assoc();
+        
+        // Close connection
+        mysqli_close($connect);
+        
         return $userLogin;
     }
 

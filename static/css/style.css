@@ -12,6 +12,13 @@ body {
     min-height: 100vh;
 }
 
+.navbar .navbar-nav .nav-link:hover {
+    color: #c28422;
+}
+
+.slogan-text {
+    color: #c28422;
+}
 
 .gameGenre {
     font-size: 14px;
@@ -24,18 +31,18 @@ body {
     border-radius: 16px;
     margin: 0;
     margin-left: 6px;
-  }
+}
 
 .product-image {
     object-fit: cover;
 }
 
-.maps-container{
-    text-align:center;
+.maps-container {
+    text-align: center;
     overflow: hidden;
 }
 
-.maps-container iframe{
+.maps-container iframe {
     height: 300px;
     width: 100%;
     /* position:absolute; */

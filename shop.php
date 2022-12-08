@@ -24,6 +24,19 @@ $productID = Product::getAllProducts();
         </div>
         <!-- Hero END -->
 
+        <!-- Filter Products Form -->
+        <p class="display-6 text-center mt-2"><b>Filter by platform</b></p>
+        <div class="d-flex justify-content-center mt-3">
+            <form action="./processing/filter-products.php" type="post">
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-dark" type="button">PC</button>
+                    <button class="btn btn-outline-dark" type="button">Playstation</button>
+                    <button class="btn btn-outline-dark" type="button">XBOX</button>
+                </div>
+            </form>
+        </div>
+        <!-- Filter Products Form END -->
+
         <!-- Cards: Display Games -->
         <div class="row row-cols-1 row-cols-lg-3 g-5 m-0">
             <?php if ($productID) : ?>

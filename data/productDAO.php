@@ -36,6 +36,17 @@ class ProductDAO {
         return $products;
     }
 
+    public static function filter() {
+        global $connect;
+
+        // Use select statement and then add to clause for platform type
+
+
+
+
+
+
+    }
 
 
 
