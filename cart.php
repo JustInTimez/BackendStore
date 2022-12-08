@@ -42,7 +42,7 @@ include __DIR__ . "/model/Product.php";
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <?php if (isset($_SESSION['Cart'])) : ?>
+                    <?php if (!empty($_SESSION['Cart'])) : ?>
                         <?php foreach ($_SESSION['Cart'] as $id) : ?>
                             <?php $item = new Product($id); ?>
                             <tr>

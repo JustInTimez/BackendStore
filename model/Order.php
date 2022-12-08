@@ -49,8 +49,8 @@ class Order {
 
     public static function removeItem() {
         $prodId = $_POST['productId'];
-
-        unset($_SESSION['Cart'][$prodId]);
+        $index = array_search($prodId, $_SESSION['Cart']);
+        unset($_SESSION['Cart'][$index]);
 
         header("Location: ../cart.php");
         exit();
