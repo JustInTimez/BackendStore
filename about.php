@@ -16,7 +16,7 @@
             </div>
         </div>
         <!-- Hero END -->
-        
+
         <div class="col-md-12 ">
             <h2 class="mb-3 mt-3 text-center">
                 We love digital <i>games</i>!
@@ -36,7 +36,7 @@
                 </div>
 
                 <!-- TODO: Something with these are making a horizontal scroll available on page. Need to find the cause and fix -->
-                <div class="row px-3">
+                <div class="row container-fluid">
                     <div class="col-md-6">
                         <div class="card flex-md-row mb-4 box-shadow h-md-250">
                             <div class="card-body d-flex flex-column align-items-start">
@@ -46,7 +46,7 @@
                                 </h3>
                                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                             </div>
-                            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+                            <img src="https://picsum.photos/id/1/200/200" class="card-img-right flex-auto d-none d-md-block" alt="Justin working">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -58,7 +58,7 @@
                                 </h3>
                                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                             </div>
-                            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+                            <img src="https://picsum.photos/id/5/200/200" class="card-img-right flex-auto d-none d-md-block" alt="Justin working more">
                         </div>
                     </div>
                 </div>
