@@ -14,7 +14,6 @@ include __DIR__ . "/head.php";
 <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark p-3 text-center">
-        <a class="navbar-brand">**Logo OR text here**</a>
         <button class="navbar-toggler text-center" type="button" data-bs-target="#navCollapse" data-bs-toggle="collapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

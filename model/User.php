@@ -59,6 +59,15 @@ class User {
             header("Location: ../shop.php");
             exit();
 
+        } else {
+            
+            // Auth failed so user gets taken back to login page
+            echo "Invalid password or email. Taking you back...";
+
+            header("Location: ../login.php");
+            exit();
+
+
         }
     }
 
