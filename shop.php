@@ -9,7 +9,12 @@ ini_set('display_errors', 'On');
 include __DIR__ . "/partials/header.php";
 include __DIR__ . "/model/Product.php";
 
-$productID = Product::getAllProducts();
+if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])) {
+    $productID = Product::filter();
+} else {
+    $productID = Product::getAllProducts();
+}
+
 ?>
 
 
@@ -27,11 +32,11 @@ $productID = Product::getAllProducts();
         <!-- Filter Products Form -->
         <p class="display-6 text-center mt-2"><b>Filter by platform</b></p>
         <div class="d-flex justify-content-center mt-3">
-            <form action="./processing/filter-products.php" type="post">
+            <form action="./shop.php" method="post">
                 <div class="input-group mb-3">
-                    <button class="btn btn-outline-dark" type="button">PC</button>
-                    <button class="btn btn-outline-dark" type="button">Playstation</button>
-                    <button class="btn btn-outline-dark" type="button">XBOX</button>
+                    <button class="btn btn-outline-dark" type="submit" name="PC" value="PC">PC</button>
+                    <button class="btn btn-outline-dark" type="submit" name="PLAYSTATION" value="PLAYSTATION">Playstation</button>
+                    <button class="btn btn-outline-dark" type="submit" name="XBOX" value="XBOX">XBOX</button>
                 </div>
             </form>
         </div>
@@ -40,6 +45,7 @@ $productID = Product::getAllProducts();
         <!-- Cards: Display Games -->
         <div class="row row-cols-1 row-cols-lg-3 g-5 m-0">
             <?php if ($productID) : ?>
+
                 <?php foreach ($productID as $id) : ?>
                     <?php $product = new Product($id['id']); ?>
 

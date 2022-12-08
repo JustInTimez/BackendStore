@@ -46,12 +46,39 @@ class Product {
         return ProductDAO::fetchAllProducts();
     }
 
+    public static function filter() {
 
+        $products = ProductDAO::fetchAllProducts();
+        $filteredProducts = [];
+        
+        // TODO: Fix this, current logic breaks functionality
 
+        foreach ($products as $id) {
+            $product = new Product($id);
+            if (isset($_POST['PC']) && $product->is_pc == true) {
+                array_push($filteredProducts, $id);
+                
+            } elseif (isset($_POST['PLAYSTATION']) && $product->is_ps == true) {
+                array_push($filteredProducts, $id);
 
+            } elseif (isset($_POST['XBOX']) && $product->is_xbox == true) {
+                array_push($filteredProducts, $id);
 
+            } else {
+                echo "No such luck";
+            }   
+        }
+        return $filteredProducts;
 
+    }
 
+    public static function displayFeatured() {
+        return ProductDAO::featuredProducts();
+    }
+
+    public static function displayLatest() {
+        return ProductDAO::latestAdditions();
+    }
 
 
 
