@@ -20,6 +20,12 @@ body {
     color: #c28422;
 }
 
+.card-size {
+    width: 85%;
+    height: 30%;
+
+}
+
 .gameGenre {
     font-size: 14px;
     background-color: #ddd;
