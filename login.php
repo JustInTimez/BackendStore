@@ -16,10 +16,10 @@
 <body>
 
     <!-- Hero -->
-    <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
-        <div class="container mt-5">
-            <h1 class="mb-3 mt-5">So, you want in, huh? 🤣</h1>
-            <p class="mb-3">Great choice. I like your style!</p>
+    <div class="jumbotron mt-5 p-3 p-md-5 text-white bg-dark">
+        <div class="col-md-12 px-0">
+            <h1 class="display-4">So, you want in, huh? 😎</h1>
+            <p class="lead my-3">Great choice. I like your style!</p>
         </div>
     </div>
     <!-- Hero END -->

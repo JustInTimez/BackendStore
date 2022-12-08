@@ -15,18 +15,12 @@
                 <p class="lead my-3">Wut? You <i>really</i> wanna find out more about us? 🤣</p>
             </div>
         </div>
-        <!-- <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
-            <div class="container mt-5">
-                <h1 class="mb-3 mt-5">About Us</h1>
-                <p class="mb-3">Some snazzy punchline?</p>
-            </div>
-        </div> -->
         <!-- Hero END -->
-        <div class="col-md-12 ">
-            <h2 class="mt-3 text-center border-bottom">
-                We love digital <i>games</i>!
-                </h2>
 
+        <div class="col-md-12 ">
+            <h2 class="mb-3 mt-3 text-center">
+                We love digital <i>games</i>!
+            </h2>
                 <div class="px-3">
                     <h2 class="blog-post-title">The Company:</h2>
 
@@ -42,7 +36,7 @@
                 </div>
 
                 <!-- TODO: Something with these are making a horizontal scroll available on page. Need to find the cause and fix -->
-                <div class="row px-3">
+                <div class="row container-fluid">
                     <div class="col-md-6">
                         <div class="card flex-md-row mb-4 box-shadow h-md-250">
                             <div class="card-body d-flex flex-column align-items-start">
@@ -52,7 +46,7 @@
                                 </h3>
                                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                             </div>
-                            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+                            <img src="https://picsum.photos/id/1/200/200" class="card-img-right flex-auto d-none d-md-block" alt="Justin working">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -64,7 +58,7 @@
                                 </h3>
                                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                             </div>
-                            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+                            <img src="https://picsum.photos/id/5/200/200" class="card-img-right flex-auto d-none d-md-block" alt="Justin working more">
                         </div>
                     </div>
                 </div>
