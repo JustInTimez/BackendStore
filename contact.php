@@ -15,12 +15,11 @@
 
 <body>
     <main>
-
         <!-- Hero -->
-        <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
-            <div class="container mt-5">
-                <h1 class="mb-3 mt-5">Contact Us</h1>
-                <p class="mb-3">Some snazzy punchline?</p>
+        <div class="jumbotron mt-5 p-3 p-md-5 text-dark bg-light">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4">Contact Us</i></h1>
+                <p class="lead my-3">Some snazzy punchline?</p>
             </div>
         </div>
         <!-- Hero END -->

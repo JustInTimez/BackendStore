@@ -9,10 +9,10 @@
 <body>
     <main>
         <!-- Hero -->
-        <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
-            <div class="container mt-5">
-                <h1 class="mb-3 mt-5">Lookbook</h1>
-                <p class="mb-3">Some kinda gallery?</p>
+        <div class="jumbotron mt-5 p-3 p-md-5 text-white bg-dark">
+            <div class="col-md-12 px-0">
+                <h1 class="display-4">Lookbook 📖</h1>
+                <p class="lead my-3">Some kinda gallery?</p>
             </div>
         </div>
         <!-- Hero END -->

@@ -15,18 +15,12 @@
                 <p class="lead my-3">Wut? You <i>really</i> wanna find out more about us? 🤣</p>
             </div>
         </div>
-        <!-- <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
-            <div class="container mt-5">
-                <h1 class="mb-3 mt-5">About Us</h1>
-                <p class="mb-3">Some snazzy punchline?</p>
-            </div>
-        </div> -->
         <!-- Hero END -->
+        
         <div class="col-md-12 ">
-            <h2 class="mt-3 text-center border-bottom">
+            <h2 class="mb-3 mt-3 text-center">
                 We love digital <i>games</i>!
-                </h2>
-
+            </h2>
                 <div class="px-3">
                     <h2 class="blog-post-title">The Company:</h2>
 
