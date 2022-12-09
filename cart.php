@@ -7,6 +7,7 @@ ini_set('display_errors', 'On');
 
 include __DIR__ . "/partials/header.php";
 include __DIR__ . "/model/Product.php";
+include __DIR__ . "/model/Order.php";
 
 // Check if the user is already logged in, if yes then redirect them to homepage
 // if (isset($_SESSION["LoggedInUser"]) && $_SESSION["LoggedInUser"] === true) {
@@ -32,6 +33,7 @@ include __DIR__ . "/model/Product.php";
         <div class="table-responsive m-5">
 
             <table class="table table-hover table-responsive-md">
+            <?php if(!empty($_SESSION['Cart'])) : ?>
                 <thead>
                     <tr>
                         <th>Game Name</th>
@@ -41,10 +43,13 @@ include __DIR__ . "/model/Product.php";
                         <th>Price</th>
                     </tr>
                 </thead>
+                <?php endif ?>
                 <tbody class="table-group-divider">
+                    <?php $cart_total = 0; ?>
                     <?php if (!empty($_SESSION['Cart'])) : ?>
                         <?php foreach ($_SESSION['Cart'] as $id) : ?>
                             <?php $item = new Product($id); ?>
+                            <?php $cart_total = $cart_total + $item->getPrice(); ?>
                             <tr>
                                 <td><?= $item->getName() ?></td>
                                 <td><?php if($item->getIs_pc()) {
@@ -70,41 +75,36 @@ include __DIR__ . "/model/Product.php";
                             </tr>
                         <?php endforeach ?>
                     <?php else : ?>
-                        <h2>Your 🛒 is empty...</h2>
+                        <h2 class="text-center">Your 🛒 is empty...</h2>
                     <?php endif ?>
                 </tbody>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-                    <tbody class="table-group-divider">
+                <?php if(!empty($_SESSION['Cart'])) : ?>
+                    <thead>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>R </td>
-                            <td>
-                                <form action="./processing/cart-pay.php" method="post">
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Total</th>
+                            <th>R <?= $cart_total ?></th>
+                            <th><form action="./processing/cart-pay.php" method="post">
                                     <input type="hidden" name="productId" value="">
                                     <button type="submit" name="Submit" class="btn btn-light">
                                         Pay
                                     </button>
                                 </form>
-                            </td>
+                            </th>
                         </tr>
-                </thead>
+                    </thead>
+                <?php endif ?>
             </table>
-            <form action="./processing/clear-cart.php" method="post">
-                <input type="hidden" name="cart" value="">
-                <button type="submit" name="Submit" class="btn btn-primary">
-                    Clear Cart
-                </button>
-            </form>
+            <?php if(!empty($_SESSION['Cart'])) : ?>
+                <form action="./processing/clear-cart.php" method="post">
+                    <input type="hidden" name="cart" value="">
+                    <button type="submit" name="Submit" class="btn btn-primary">
+                        Clear Cart
+                    </button>
+                </form>
+            <?php endif ?>
         </div>
     </main>
 

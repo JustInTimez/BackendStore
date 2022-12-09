@@ -4,6 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 include __DIR__ . "/../data/orderDAO.php";
+// include __DIR__ . "/Product.php";
 
 class Order {
 
@@ -45,13 +46,6 @@ class Order {
         } else {
             return ($_SESSION['Cart']);
         }
-    }
-
-    public static function cartTotal() {
-
-
-
-
     }
 
     public static function removeItem() {

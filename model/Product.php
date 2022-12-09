@@ -5,6 +5,7 @@ ini_set('display_errors', 'On');
 
 include __DIR__ . "/../data/productDAO.php";
 
+
 class Product {
 
     // ========================= FIELDS =========================
@@ -52,18 +53,20 @@ class Product {
 
         $products = ProductDAO::fetchAllProducts();
         $filteredProducts = [];
+
         
         // TODO: Fix this, current logic breaks functionality
 
         foreach ($products as $id) {
             $product = new Product($id);
-            if (isset($_POST['PC']) && $product->is_pc == true) {
+            // echo "<pre class='mt-5'>"; print_r($product); echo "</pre>";
+            if (isset($_POST['PC']) && $product->getIs_pc() == true) {
                 array_push($filteredProducts, $id);
                 
-            } elseif (isset($_POST['PLAYSTATION']) && $product->is_ps == true) {
+            } elseif (isset($_POST['PLAYSTATION']) && $product->getIs_ps() == true) {
                 array_push($filteredProducts, $id);
 
-            } elseif (isset($_POST['XBOX']) && $product->is_xbox == true) {
+            } elseif (isset($_POST['XBOX']) && $product->getIs_xbox() == true) {
                 array_push($filteredProducts, $id);
 
             } else {
