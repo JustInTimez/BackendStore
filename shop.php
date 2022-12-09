@@ -59,7 +59,7 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                                 </div>
                                 <p class="display-5 mb-1 text-center">R <?= $product->getPrice() ?></p>
                                 <div class="">
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-evenly">
                                         <div class="mt-5">
                                             <form action="./processing/process-session.php" method="post">
                                                 <input type="hidden" name="productId" value="<?= $product->getId() ?>">
