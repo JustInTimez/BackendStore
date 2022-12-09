@@ -21,7 +21,7 @@ $latestProducts = Product::displayLatest();
         <!-- Hero -->
         <div class="jumbotron mt-5 p-3 p-md-5 text-white bg-dark">
             <div class="col-md-12 px-0">
-                <h1 class="display-4">Looking for some <i class="slogan-text">games?</i> 😎</h1>
+                <h1 class="display-4">Looking for some <i>games?</i> 😎</h1>
                 <p class="lead my-3">Welcome to the <b>best</b> place to find GAMES!</p>
             </div>
         </div>
@@ -36,14 +36,14 @@ $latestProducts = Product::displayLatest();
 
         <!-- Featured GAMES Display -->
         <h3 class="mb-3 mt-3 text-center display-6">Check out our <i>FEATURED</i> games!</h3>
-        <div class="row row-cols-1 row-cols-lg-3 g-5 m-0">
+        <div class="row row-cols-1 row-cols-lg-3 g-5 m-0 justify-content-center">
             <?php if ($featProducts) : ?>
 
                 <?php foreach ($featProducts as $id) : ?>
-                    <?php $product = new Product($id); ?>
+                    <?php $product = new Product($id['id']); ?>
 
-                    <div class="col-xl-4 col-md-6">
-                        <div class="card border-dark bg-dark text-white shadow h-100">
+                    <div class="col-xl-4 col-md-6 d-flex justify-content-center">
+                        <div class="card border-dark bg-dark text-white shadow card-size">
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $product->getName() ?></h5><span class="small mb-0"><?= $product->getRating() ?></span>
@@ -110,18 +110,18 @@ $latestProducts = Product::displayLatest();
         <!-- Featured GAMES Display END -->
 
         <!-- New Additions GAMES Display -->
-        <h4 class="mb-3 mt-3 text-center display-6">Our <i>LATEST</i> additions...</h4>
-        <div class="row row-cols-1 row-cols-lg-3 g-5 m-0">
+        <h4 class="mb-3 mt-5 text-center display-6">Our <i>LATEST</i> additions...</h4>
+        <div class="row row-cols-1 row-cols-lg-3 g-5 m-0 justify-content-center">
             <?php if ($latestProducts) : ?>
 
                 <?php foreach ($latestProducts as $id) : ?>
-                    <?php $product = new Product($id); ?>
+                    <?php $product = new Product($id['id']); ?>
 
-                    <div class="col-xl-4 col-md-6">
-                        <div class="card border-dark bg-dark text-white shadow h-100">
+                    <div class="col-xl-4 col-md-6 d-flex justify-content-center">
+                        <div class="card border-dark bg-dark text-white shadow card-size">
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
-                                <h5 class="card-title"><?= $product->getName() ?></h5><span class="small mb-0"><?= $product->getRating() ?></span>
+                                <h5 class="card-title"><?= $product->getName() ?></h5><span class="small mb-0">Added: <?= $product->getAdd_date() ?></span>
                                 <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
                                     <p class="display-7 lh-1 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
                                 </div>
