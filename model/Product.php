@@ -20,6 +20,7 @@ class Product {
     private $is_xbox;
     private $is_ps;
     private $stock;
+    private $add_date;
 
 
     public function __construct($id){
@@ -38,6 +39,7 @@ class Product {
         $this->is_xbox = $product['is_xbox'];
         $this->is_ps = $product['is_ps'];
         $this->stock = $product['stock'];
+        $this->add_date = $product['add_date'];
     }
 
     // ========================= METHODS =========================
@@ -214,6 +216,18 @@ class Product {
     public function setStock($stock)
     {
         $this->stock = $stock;
+
+        return $this;
+    }
+ 
+    public function getAdd_date()
+    {
+        return $this->add_date;
+    }
+
+    public function setAdd_date($add_date)
+    {
+        $this->add_date = $add_date;
 
         return $this;
     }

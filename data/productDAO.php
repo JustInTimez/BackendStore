@@ -38,7 +38,7 @@ class ProductDAO {
     public static function featuredProducts() {
         global $connect;
 
-        $sql = "SELECT id FROM products WHERE rating >= 3 AND rating >= 5 LIMIT 3";
+        $sql = "SELECT id FROM products ORDER BY RAND() LIMIT 2";
         $stmt = $connect->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -49,7 +49,7 @@ class ProductDAO {
     public static function latestAdditions() {
         global $connect;
 
-        $sql = "SELECT id FROM products ORDER BY RAND() LIMIT 2";
+        $sql = "SELECT id FROM products WHERE add_date >= 3 LIMIT 3";
         $stmt = $connect->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();

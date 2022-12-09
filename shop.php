@@ -49,7 +49,7 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                 <?php foreach ($productID as $id) : ?>
                     <?php $product = new Product($id['id']); ?>
 
-                    <div class="col-xl-4 col-md-6">
+                    <div class="col-xl-4 col-md-6 d-flex justify-content-center">
                         <div class="card border-dark bg-dark text-white shadow card-size">
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
@@ -59,7 +59,7 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                                 </div>
                                 <p class="display-5 mb-1 text-center">R <?= $product->getPrice() ?></p>
                                 <div class="">
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-evenly">
                                         <div class="mt-5">
                                             <form action="./processing/process-session.php" method="post">
                                                 <input type="hidden" name="productId" value="<?= $product->getId() ?>">
