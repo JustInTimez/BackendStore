@@ -12,6 +12,7 @@ class orderDAO {
 
         // Grab hidden field from form POST (product's ID), as well as grab user SESSION ID
         $userId = $_SESSION['LoggedInUser']['id'];
+
         $productId = $_POST['productId'];
 
 
