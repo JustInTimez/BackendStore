@@ -73,7 +73,7 @@ class User {
 
     public static function userLogout() {
         if(session_destroy()) {
-            header("Location: ./login.php");
+            header("Location: ./index.php");
          }
     }
 

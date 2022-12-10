@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . "/config.php"; 
+include __DIR__ . "/config.php";
 
 class ProductDAO {
 
@@ -56,10 +56,5 @@ class ProductDAO {
         $latestProducts = $result->fetch_all(MYSQLI_ASSOC);
         return $latestProducts;
     }
-
-
-
-
-
 
 }

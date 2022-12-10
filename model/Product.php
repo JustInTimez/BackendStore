@@ -22,6 +22,7 @@ class Product {
     private $is_ps;
     private $stock;
     private $add_date;
+    private $trailer_link;
 
 
     public function __construct($id){
@@ -41,6 +42,7 @@ class Product {
         $this->is_ps = $product['is_ps'];
         $this->stock = $product['stock'];
         $this->add_date = $product['add_date'];
+        $this->trailer_link = $product['trailer_link'];
     }
 
     // ========================= METHODS =========================
@@ -234,6 +236,18 @@ class Product {
     public function setAdd_date($add_date)
     {
         $this->add_date = $add_date;
+
+        return $this;
+    }
+
+    public function getTrailer_link()
+    {
+        return $this->trailer_link;
+    }
+
+    public function setTrailer_link($trailer_link)
+    {
+        $this->trailer_link = $trailer_link;
 
         return $this;
     }
