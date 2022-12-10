@@ -87,9 +87,8 @@ include __DIR__ . "/model/Order.php";
                             <th>Total</th>
                             <th>R <?= $cart_total ?></th>
                             <th><form action="./processing/cart-pay.php" method="post">
-                                    <input type="hidden" name="productId" value="">
                                     <button type="submit" name="Submit" class="btn btn-light">
-                                        Pay
+                                        <i>Pay</i>
                                     </button>
                                 </form>
                             </th>
@@ -99,7 +98,6 @@ include __DIR__ . "/model/Order.php";
             </table>
             <?php if(!empty($_SESSION['Cart'])) : ?>
                 <form action="./processing/clear-cart.php" method="post">
-                    <input type="hidden" name="cart" value="">
                     <button type="submit" name="Submit" class="btn btn-primary">
                         Clear Cart
                     </button>

@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 include __DIR__ . "/../data/orderDAO.php";
-// include __DIR__ . "/Product.php";
+
 
 class Order {
 
@@ -12,14 +12,12 @@ class Order {
 
     private $order_id;
     private $customer_id;
-    private $product_id;
     private $buy_date;
 
     public function __construct($order_id, $customer_id, $product_id, $buy_date){
 
         $this->order_id = $order_id;
         $this->customer_id = $customer_id;
-        $this->product_id = $product_id;
         $this->buy_date = $buy_date;
 
     }
@@ -67,7 +65,16 @@ class Order {
 
     }
 
+    public static function payCart() {
+        OrderDAO::createOrder();
+        $_SESSION['Cart'] = [];
+        
+        header("Location: ../order-paid.php");
+        exit();
 
+
+
+    }
 
 
 
@@ -99,18 +106,6 @@ class Order {
     public function setCustomer_id($customer_id)
     {
         $this->customer_id = $customer_id;
-
-        return $this;
-    }
-
-    public function getProduct_id()
-    {
-        return $this->product_id;
-    }
-
-    public function setProduct_id($product_id)
-    {
-        $this->product_id = $product_id;
 
         return $this;
     }

@@ -54,6 +54,7 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
                                 <h5 class="card-title text-center"><?= $product->getName() ?> </h5><span class="small mb-0 text-center"><?= $product->getRating() ?><i class="fa-solid fa-star"></i></span>
+                                <p class="gameGenre"><?= $product->getGenre() ?></p>
                                 <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
                                     <p class="display-7 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
                                 </div>
@@ -119,6 +120,7 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                             </div>
                         </div>
                     </div>
+                    <!-- Modal END -->
                 <?php endforeach ?>
             <?php else : ?>
                 <h2>Sorry, the request could not be completed. Go back and refresh your browser</h2>
