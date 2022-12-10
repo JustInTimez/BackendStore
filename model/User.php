@@ -44,6 +44,15 @@ class User {
             header("Location: ../shop.php");
             exit();
 
+        } else {
+
+            echo "Error: " . $sql . "<br>" . $connect->error;
+
+            // Close connection
+            mysqli_close($connect);
+
+            header("Location: ../login.php");
+            exit();
         }
     }
 
@@ -76,15 +85,6 @@ class User {
             header("Location: ./index.php");
          }
     }
-
-
-
-
-
-
-
-
-    // ==================== GETTERS & SETTERS ====================
 
     
 
