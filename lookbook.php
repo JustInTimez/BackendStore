@@ -20,38 +20,38 @@
         <!-- Gallery -->
             <div class="row mt-3">
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 justify-content-center">
-                    <img src="./static/images/products/ps5-ACV.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Assassins Creed Valhalla" />
+                    <a href="./shop.php"><img src="./static/images/products/ps5-ACV.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Assassins Creed Valhalla" /></a>
 
                     <img src="./static/images/products/ps4-FC5.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Far Cry 5" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0 justify-content-center">
-                    <img src="./static/images/products/ps4-CH.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Cuphead" />
+                    <a href="./shop.php"><img src="./static/images/products/ps4-CH.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Cuphead" /></a>
 
-                    <img src="./static/images/products/pc-HG.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="HALO Guardians" />
+                    <a href="./shop.php"><img src="./static/images/products/pc-HG.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="HALO Guardians" /></a>
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0 justify-content-center">
-                    <img src="./static/images/products/pc-GTA.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Grand Theft Auto 5" />
+                    <a href="./shop.php"><img src="./static/images/products/pc-GTA.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Grand Theft Auto 5" /></a>
 
-                    <img src="./static/images/products/pc-ER.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Elden Ring" />
+                    <a href="./shop.php"><img src="./static/images/products/pc-ER.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Elden Ring" /></a>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 justify-content-center">
-                    <img src="./static/images/products/pc-D3.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Diablo 3" />
+                    <a href="./shop.php"><img src="./static/images/products/pc-D3.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Diablo 3" /></a>
 
-                    <img src="./static/images/products/ps5-SR4.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Saint's Row 4" />
+                    <a href="./shop.php"><img src="./static/images/products/ps5-SR4.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Saint's Row 4" /></a>
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0 justify-content-center">
-                    <img src="./static/images/products/xbox360-RE5.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Resident Evil 5" />
+                    <a href="./shop.php"><img src="./static/images/products/xbox360-RE5.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Resident Evil 5" /></a>
 
-                    <img src="./static/images/products/xbox360-RDR2.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Red Dead Redemption 2" />
+                    <a href="./shop.php"><img src="./static/images/products/xbox360-RDR2.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Red Dead Redemption 2" /></a>
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0 justify-content-center">
-                    <img src="./static/images/products/xbone-GoW.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="God of War: Battlezone X'D" />
+                    <a href="./shop.php"><img src="./static/images/products/xbone-GoW.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="God of War: Battlezone X'D" /></a>
 
-                    <img src="./static/images/products/xbone-C2077.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Cyberpunk 2077" />
+                    <a href="./shop.php"><img src="./static/images/products/xbone-C2077.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Cyberpunk 2077" /></a>
                 </div>
             </div>
         <!-- Gallery -->

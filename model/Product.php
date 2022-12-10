@@ -54,23 +54,26 @@ class Product {
         $products = ProductDAO::fetchAllProducts();
         $filteredProducts = [];
 
-        
-        // TODO: Fix this, current logic breaks functionality
-
         foreach ($products as $id) {
-            $product = new Product($id);
-            // echo "<pre class='mt-5'>"; print_r($product); echo "</pre>";
-            if (isset($_POST['PC']) && $product->getIs_pc() == true) {
-                array_push($filteredProducts, $id);
-                
-            } elseif (isset($_POST['PLAYSTATION']) && $product->getIs_ps() == true) {
-                array_push($filteredProducts, $id);
+            $product = new Product($id['id']);
 
-            } elseif (isset($_POST['XBOX']) && $product->getIs_xbox() == true) {
-                array_push($filteredProducts, $id);
+            if (isset($_POST['PC'])) {
+                if ($product->getIs_pc() == true) {
+                    array_push($filteredProducts, $id);
+                }
+
+            } elseif (isset($_POST['PLAYSTATION'])) {
+                if ($product->getIs_ps() == true) {
+                    array_push($filteredProducts, $id);
+                }
+
+            } elseif (isset($_POST['XBOX'])) {
+                if ($product->getIs_xbox() == true) {
+                    array_push($filteredProducts, $id);
+            }
 
             } else {
-                echo "No such luck";
+                return [];
             }   
         }
         return $filteredProducts;

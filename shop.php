@@ -44,7 +44,7 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
 
         <!-- Cards: Display Games -->
         <div class="row row-cols-1 row-cols-lg-3 g-5 m-0">
-            <?php if ($productID) : ?>
+            <?php if (!empty($productID)) : ?>
 
                 <?php foreach ($productID as $id) : ?>
                     <?php $product = new Product($id['id']); ?>
@@ -54,6 +54,7 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
                                 <h5 class="card-title text-center"><?= $product->getName() ?> </h5><span class="small mb-0 text-center"><?= $product->getRating() ?><i class="fa-solid fa-star"></i></span>
+                                <p class="gameGenre"><?= $product->getGenre() ?></p>
                                 <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
                                     <p class="display-7 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
                                 </div>
@@ -64,7 +65,13 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                                             <form action="./processing/process-session.php" method="post">
                                                 <input type="hidden" name="productId" value="<?= $product->getId() ?>">
                                                 <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#productModal<?= $product->getId() ?>"><i>Details</i></button>
-                                                <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? '<b>Already in!</b>' : "Add to Cart" ?></i></button>
+                                                <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
+                                                    <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
+                                                <?php elseif ($product->getStock() == 0) : ?> 
+                                                    <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
+                                                <?php else : ?>
+                                                    <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                                <?php endif ?>
                                             </form>
                                         </div>
                                     </div>
@@ -100,13 +107,20 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nah, lemme see the others...</button>
-                                        <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? 'Already in!' : "Add to Cart" ?></i></button>
+                                        <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
+                                            <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
+                                        <?php elseif ($product->getStock() == 0) : ?> 
+                                            <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
+                                        <?php else : ?>
+                                            <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                        <?php endif ?>
                                     </div>
                                 </form>
 
                             </div>
                         </div>
                     </div>
+                    <!-- Modal END -->
                 <?php endforeach ?>
             <?php else : ?>
                 <h2>Sorry, the request could not be completed. Go back and refresh your browser</h2>
