@@ -15,6 +15,8 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
     $productID = Product::getAllProducts();
 }
 
+
+
 ?>
 
 
@@ -53,24 +55,30 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                         <div class="card border-dark bg-dark text-white shadow card-size">
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
-                                <h5 class="card-title text-center"><?= $product->getName() ?> </h5><span class="small mb-0 text-center"><?= $product->getRating() ?><i class="fa-solid fa-star"></i></span>
-                                <p class="gameGenre"><?= $product->getGenre() ?></p>
-                                <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
-                                    <p class="display-7 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
+                                <div class="text-center">
+                                    <h5 class="card-title text-center"><?= $product->getName() ?> </h5><span class="small mb-0 text-center"><?= $product->getRating() ?> <i class="fa-solid fa-star"></i></span>
+                                    <p class="gameGenre text-center"><?= $product->getGenre() ?></p>
                                 </div>
-                                <p class="display-5 mb-1 text-center">R <?= $product->getPrice() ?></p>
-                                <div class="">
+                                <p class="display-5 mt-3 text-center">R <?= $product->getPrice() ?></p>
+                                <div class="d-flex flex-column align-items-center flex-fill">
+                                    <span class="small"><?= $product->getStock() ?></span><p class="display-7 mb-1">left!</p>
+                                </div>
+                                <div class="container">
                                     <div class="d-flex justify-content-evenly">
-                                        <div class="mt-5">
+                                        <div class="mt-3">
                                             <form action="./processing/process-session.php" method="post">
                                                 <input type="hidden" name="productId" value="<?= $product->getId() ?>">
                                                 <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#productModal<?= $product->getId() ?>"><i>Details</i></button>
-                                                <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
-                                                    <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
-                                                <?php elseif ($product->getStock() == 0) : ?> 
-                                                    <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
-                                                <?php else : ?>
-                                                    <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                                <?php if(isset($_SESSION['Cart']) === true) : ?>
+                                                    <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
+                                                        <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
+                                                    <?php elseif ($product->getStock() == 0) : ?> 
+                                                        <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
+                                                    <?php else : ?>
+                                                        <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                                    <?php endif ?>
+                                                    <?php elseif (empty($_SESSION["Cart"])) : ?>
+                                                    <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Log in to add!</i></button>
                                                 <?php endif ?>
                                             </form>
                                         </div>
@@ -80,43 +88,42 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="modal fade" id="productModal<?= $product->getId() ?>" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                    <div class="modal fade mb-4" id="productModal<?= $product->getId() ?>" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
-
                                 <form action="./processing/process-session.php" method="post">
                                     <div class="modal-header">
-                                        <!-- Try add in the genres as category pills next to the title in a row. Perhaps also use on the base card? -->
                                         <h1 class="modal-title fs-4"><?= $product->getName() ?></h1>
                                         <p class="gameGenre"><?= $product->getGenre() ?></p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <!-- Idea: Use iframe or API instead of image to call to a YT trailer video for the selected game? -->
-                                        <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
+                                        <iframe width="100%" height="350" src=<?= $product->getTrailer_link() ?>></iframe>
                                         <div>
                                             <p class="fs-5 text-center">Description:</p>
                                             <p><?= $product->getDescription() ?></p>
                                             <p class="display-5 lh-1 mb-1">R <?= $product->getPrice() ?></p>
-
                                             <p class="fs-5 text-center">Play <?= $product->getName() ?> <i>today!</i></p>
-
                                             <!-- Hidden field for productID -->
                                             <input type="hidden" name="productId" value="<?= $product->getId() ?>">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nah, lemme see the others...</button>
-                                        <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
-                                            <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
-                                        <?php elseif ($product->getStock() == 0) : ?> 
-                                            <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
-                                        <?php else : ?>
-                                            <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nah, lemme see others...</button>
+                                        <?php if (isset($_SESSION['Cart']) === true) : ?>
+                                            <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
+                                                <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
+                                            <?php elseif ($product->getStock() == 0) : ?> 
+                                                <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
+                                            <?php else : ?>
+                                                <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                            <?php endif ?>
+                                            <?php elseif (empty($_SESSION["Cart"])) : ?> 
+                                                <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Log in to add!</i></button>
                                         <?php endif ?>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>

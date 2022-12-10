@@ -46,18 +46,31 @@ $latestProducts = Product::displayLatest();
                         <div class="card border-dark bg-dark text-white shadow card-size">
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
-                                <h5 class="card-title text-center"><?= $product->getName() ?></h5><span class="small mb-0"><?= $product->getRating() ?><i class="fa-solid fa-star"></i></span>
-                                <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
-                                    <p class="display-7 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
+                                <div class="text-center">
+                                    <h5 class="card-title text-center"><?= $product->getName() ?> </h5><span class="small mb-0 text-center"><?= $product->getRating() ?> <i class="fa-solid fa-star"></i></span>
+                                    <p class="gameGenre text-center"><?= $product->getGenre() ?></p>
                                 </div>
-                                <p class="display-5 mb-1 text-center">R <?= $product->getPrice() ?></p>
-                                <div class="">
+                                <p class="display-5 mt-3 text-center">R <?= $product->getPrice() ?></p>
+                                <div class="d-flex flex-column align-items-center flex-fill">
+                                    <span class="small"><?= $product->getStock() ?></span><p class="display-7 mb-1">left!</p>
+                                </div>
+                                <div class="container">
                                     <div class="d-flex justify-content-evenly">
-                                        <div class="mt-5">
+                                        <div class="mt-3">
                                             <form action="./processing/process-session.php" method="post">
                                                 <input type="hidden" name="productId" value="<?= $product->getId() ?>">
                                                 <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#productModal<?= $product->getId() ?>"><i>Details</i></button>
-                                                <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? '<b>Already in!</b>' : "Add to Cart" ?></i></button>
+                                                <?php if(isset($_SESSION['Cart']) === true) : ?>
+                                                    <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
+                                                        <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
+                                                    <?php elseif ($product->getStock() == 0) : ?> 
+                                                        <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
+                                                    <?php else : ?>
+                                                        <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                                    <?php endif ?>
+                                                    <?php elseif (empty($_SESSION["Cart"])) : ?>
+                                                        <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Log in to add!</i></button>
+                                                <?php endif ?>
                                             </form>
                                         </div>
                                     </div>
@@ -92,8 +105,18 @@ $latestProducts = Product::displayLatest();
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nah, lemme see the others...</button>
-                                        <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? 'Already in!' : "Add to Cart" ?></i></button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nah, lemme see others...</button>
+                                        <?php if(isset($_SESSION['Cart']) === true) : ?>
+                                            <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
+                                                <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
+                                            <?php elseif ($product->getStock() == 0) : ?> 
+                                                <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
+                                            <?php else : ?>
+                                                <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                            <?php endif ?>
+                                            <?php elseif (empty($_SESSION["Cart"])) : ?>
+                                                <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Log in to add!</i></button>
+                                        <?php endif ?>
                                     </div>
                                 </form>
 
@@ -119,22 +142,34 @@ $latestProducts = Product::displayLatest();
                         <div class="card border-dark bg-dark text-white shadow card-size">
                             <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
                             <div class="card-body">
-                                <h5 class="card-title"><?= $product->getName() ?></h5><span class="small mb-0">Added: <?= $product->getAdd_date() ?></span>
-                                <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
-                                    <p class="display-7 lh-1 mb-1">Stock:</p><span class="small mb-0"><?= $product->getStock() ?></span>
+                                <div class="text-center">
+                                    <h5 class="card-title text-center"><?= $product->getName() ?> </h5><span class="small mb-0 text-center"><?= $product->getRating() ?> <i class="fa-solid fa-star"></i></span>
+                                    <p class="gameGenre text-center"><?= $product->getGenre() ?></p>
                                 </div>
-                                <div class="d-flex">
-                                    <div class="d-flex flex-column">
-                                        <div class="mt-5">
+                                <p class="display-5 mt-3 text-center">R <?= $product->getPrice() ?></p>
+                                <p class="small text-center">Added: <?= $product->getAdd_date() ?></p>
+                                <div class="d-flex flex-column align-items-center flex-fill">
+                                    <span class="small"><?= $product->getStock() ?></span><p class="display-7 mb-1">left!</p>
+                                </div>
+                                <div class="container">
+                                    <div class="d-flex justify-content-evenly">
+                                        <div class="mt-3">
                                             <form action="./processing/process-session.php" method="post">
                                                 <input type="hidden" name="productId" value="<?= $product->getId() ?>">
                                                 <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#productModal<?= $product->getId() ?>"><i>Details</i></button>
-                                                <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? '<b>Already in!</b>' : "Add to Cart" ?></i></button>
+                                                <?php if(isset($_SESSION['Cart']) === true) : ?>
+                                                    <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
+                                                        <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
+                                                    <?php elseif ($product->getStock() == 0) : ?> 
+                                                        <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
+                                                    <?php else : ?>
+                                                        <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                                    <?php endif ?>
+                                                    <?php elseif (empty($_SESSION["Cart"])) : ?>
+                                                    <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Log in to add!</i></button>
+                                                <?php endif ?>
                                             </form>
                                         </div>
-                                    </div>
-                                    <div class="d-flex flex-column align-items-end flex-fill justify-content-end">
-                                        <p class="display-5 lh-1 mb-1">R <?= $product->getPrice() ?></p><span class="small mb-0"><?= $product->getRating() ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -167,8 +202,18 @@ $latestProducts = Product::displayLatest();
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nah, lemme see the others...</button>
-                                        <button type="submit" name="Submit" class="btn btn-primary" <?= in_array($product->getId(), $_SESSION['Cart']) ? 'disabled' : "" ?>><i><?= in_array($product->getId(), $_SESSION['Cart']) ? 'Already in!' : "Add to Cart" ?></i></button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nah, lemme see others...</button>
+                                        <?php if(isset($_SESSION['Cart']) === true) : ?>
+                                            <?php if (in_array($product->getId(), $_SESSION['Cart'])) : ?>
+                                                <button type="submit" name="Submit" class="btn btn-primary" disabled><i>Already in!</i></button>
+                                            <?php elseif ($product->getStock() == 0) : ?> 
+                                                <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Out of Stock</i></button>
+                                            <?php else : ?>
+                                                <button type="submit" name="Submit" class="btn btn-primary"><i>Add to Cart</i></button>
+                                            <?php endif ?>
+                                            <?php elseif (empty($_SESSION["Cart"])) : ?>
+                                                <button type="submit" name="Submit" class="btn btn-danger" disabled><i>Log in to add!</i></button>
+                                        <?php endif ?>
                                     </div>
                                 </form>
 

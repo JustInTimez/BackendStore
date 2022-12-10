@@ -76,9 +76,7 @@ class UserDAO {
                 mysqli_close($connect);
                 
                 return true;
-            } else {
-                return false;
-            }
+            } 
 
         } else {
 
