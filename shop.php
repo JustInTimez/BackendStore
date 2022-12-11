@@ -3,9 +3,6 @@
 
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-
 include __DIR__ . "/partials/header.php";
 include __DIR__ . "/model/Product.php";
 
