@@ -36,9 +36,3 @@ Otherwise, register a new account - you will be directed to the homepage.<br>
 You now have access to add items to your cart - and then to make a 'purchase' when happy!<br>
 
 
-### Built With
-[![HTML][html.com]][html-url]
-[![Bootstrap][Bootstrap.com]][Bootstrap-url]
-[![PHP][php.net]][php-url]
-
-
