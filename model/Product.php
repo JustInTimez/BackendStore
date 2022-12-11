@@ -5,7 +5,6 @@ ini_set('display_errors', 'On');
 
 include __DIR__ . "/../data/productDAO.php";
 
-
 class Product {
 
     // ========================= FIELDS =========================
@@ -91,164 +90,136 @@ class Product {
     }
 
 
-
-
-
     // ==================== GETTERS & SETTERS ====================
 
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
 
         return $this;
     }
 
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getImage()
-    {
+    public function getImage() {
         return $this->image;
     }
 
-    public function setImage($image)
-    {
+    public function setImage($image) {
         $this->image = $image;
 
         return $this;
     }
 
-    public function getPrice()
-    {
+    public function getPrice() {
         return $this->price;
     }
 
-    public function setPrice($price)
-    {
+    public function setPrice($price) {
         $this->price = $price;
 
         return $this;
     }
 
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
     }
 
-    public function getRating()
-    {
+    public function getRating() {
         return $this->rating;
     }
 
-    public function setRating($rating)
-    {
+    public function setRating($rating) {
         $this->rating = $rating;
 
         return $this;
     }
 
-    public function getGenre()
-    {
+    public function getGenre() {
         return $this->genre;
     }
 
-    public function setGenre($genre)
-    {
+    public function setGenre($genre) {
         $this->genre = $genre;
 
         return $this;
     }
 
-    public function getIs_pc()
-    {
+    public function getIs_pc() {
         return $this->is_pc;
     }
 
-    public function setIs_pc($is_pc)
-    {
+    public function setIs_pc($is_pc) {
         $this->is_pc = $is_pc;
 
         return $this;
     }
 
-    public function getIs_xbox()
-    {
+    public function getIs_xbox() {
         return $this->is_xbox;
     }
 
-    public function setIs_xbox($is_xbox)
-    {
+    public function setIs_xbox($is_xbox) {
         $this->is_xbox = $is_xbox;
 
         return $this;
     }
 
-    public function getIs_ps()
-    {
+    public function getIs_ps() {
         return $this->is_ps;
     }
 
-    public function setIs_ps($is_ps)
-    {
+    public function setIs_ps($is_ps) {
         $this->is_ps = $is_ps;
 
         return $this;
     }
 
-    public function getStock()
-    {
+    public function getStock() {
         return $this->stock;
     }
 
-    public function setStock($stock)
-    {
+    public function setStock($stock) {
         $this->stock = $stock;
 
         return $this;
     }
  
-    public function getAdd_date()
-    {
+    public function getAdd_date() {
         return $this->add_date;
     }
 
-    public function setAdd_date($add_date)
-    {
+    public function setAdd_date($add_date) {
         $this->add_date = $add_date;
 
         return $this;
     }
 
-    public function getTrailer_link()
-    {
+    public function getTrailer_link() {
         return $this->trailer_link;
     }
 
-    public function setTrailer_link($trailer_link)
-    {
+    public function setTrailer_link($trailer_link) {
         $this->trailer_link = $trailer_link;
 
         return $this;
     }
+    
 }

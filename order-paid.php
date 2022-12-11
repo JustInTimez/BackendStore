@@ -7,7 +7,6 @@
 ?>
 
 <body>
-
     <!-- Hero -->
     <div class="jumbotron mt-5 p-3 p-md-5 text-white bg-dark">
         <div class="col-md-12 px-0">
@@ -16,6 +15,7 @@
         </div>
     </div>
     <!-- Hero END -->
+    
     <h2 class="my-3 text-center">Great! 😃 Please check your <u>email</u> for your game code(s)!</h2>
 
     <?php include __DIR__ . "/partials/footer.php"; ?>

@@ -54,7 +54,8 @@
                     <a href="./shop.php"><img src="./static/images/products/xbone-C2077.jpg" class="w-85 shadow-1-strong rounded mb-4" alt="Cyberpunk 2077" /></a>
                 </div>
             </div>
-        <!-- Gallery -->
+        <!-- Gallery END -->
+        
     </main>
 
     <?php include __DIR__ . "/partials/footer.php"; ?>

@@ -4,8 +4,6 @@ include __DIR__ . "/config.php";
 
 class ProductDAO {
 
-
-
     // ========================= DB CRUD METHODS =========================
 
 

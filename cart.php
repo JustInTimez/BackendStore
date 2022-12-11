@@ -9,12 +9,6 @@ include __DIR__ . "/partials/header.php";
 include __DIR__ . "/model/Product.php";
 include __DIR__ . "/model/Order.php";
 
-// Check if the user is already logged in, if yes then redirect them to homepage
-// if (isset($_SESSION["LoggedInUser"]) && $_SESSION["LoggedInUser"] === true) {
-//     header("location: ./login.php");
-//     exit;
-// }
-
 ?>
 
 

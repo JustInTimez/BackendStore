@@ -5,7 +5,6 @@ ini_set('display_errors', 'On');
 
 include __DIR__ . "/../data/orderDAO.php";
 
-
 class Order {
 
     // ========================= FIELDS =========================
@@ -23,8 +22,6 @@ class Order {
     }
 
 
-
-
     // ========================= METHODS =========================
 
     public static function addToCart() {
@@ -36,6 +33,7 @@ class Order {
 
         header("Location: ../cart.php");
         exit();
+
     }
 
     public static function displayCart() {
@@ -62,7 +60,6 @@ class Order {
         header("Location: ../cart.php");
         exit();
 
-
     }
 
     public static function payCart() {
@@ -72,53 +69,39 @@ class Order {
         header("Location: ../order-paid.php");
         exit();
 
-
-
     }
-
-
-
-
-
-
-
 
 
     // ==================== GETTERS & SETTERS ====================
 
-    public function getOrder_id()
-    {
+    public function getOrder_id() {
         return $this->order_id;
     }
 
-    public function setOrder_id($order_id)
-    {
+    public function setOrder_id($order_id) {
         $this->order_id = $order_id;
 
         return $this;
     }
 
-    public function getCustomer_id()
-    {
+    public function getCustomer_id() {
         return $this->customer_id;
     }
 
-    public function setCustomer_id($customer_id)
-    {
+    public function setCustomer_id($customer_id) {
         $this->customer_id = $customer_id;
 
         return $this;
     }
 
-    public function getBuy_date()
-    {
+    public function getBuy_date() {
         return $this->buy_date;
     }
 
-    public function setBuy_date($buy_date)
-    {
+    public function setBuy_date($buy_date) {
         $this->buy_date = $buy_date;
 
         return $this;
     }
+    
 }
