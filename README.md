@@ -15,6 +15,7 @@ As a user on this site, you are able to:
 - [x] Add to Cart.
 - [x] Cart order total is calculated and displayed.
 - [x] Payment of cart.
+- [x] If not logged in, user is not allowed to add an item to cart.
 
 What I want to add in the future:
 - [ ] Tighter validation on register and login.
