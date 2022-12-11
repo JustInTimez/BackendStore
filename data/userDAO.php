@@ -67,23 +67,13 @@ class UserDAO {
 
             if ($result->num_rows == 1) {
                 $user = $result->fetch_assoc();
-                $_SESSION['LoggedInUser'] = $user;
 
                 // Close connection
                 mysqli_close($connect);
                 
-                return true;
+                return $user;
             } 
 
-        } else {
-
-            echo "Error: " . $sql . "<br>" . $connect->error;
-
-            // Close connection
-            mysqli_close($connect);
-
-            header("Location: ../login.php");
-            exit();
         }
         
     }

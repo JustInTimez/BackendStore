@@ -41,7 +41,6 @@ class User {
 
             header("Location: ../shop.php");
             exit();
-
         }
     }
 
