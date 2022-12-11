@@ -2,17 +2,13 @@
 <html lang="en">
 
 <?php
+
 include __DIR__ . "/partials/header.php";
 include __DIR__ . "/model/Product.php";
 
-// Check if the user is already logged in, if yes then redirect them to homepage
-// if (isset($_SESSION["LoggedInUser"]) && $_SESSION["LoggedInUser"] === true) {
-//     header("location: ./login.php");
-//     exit;
-// }
-
 $featProducts = Product::displayFeatured();
 $latestProducts = Product::displayLatest();
+
 ?>
 
 
@@ -80,26 +76,22 @@ $latestProducts = Product::displayLatest();
                     </div>
                     <!-- Modal -->
                     <div class="modal fade" id="productModal<?= $product->getId() ?>" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
 
                                 <form action="./processing/process-session.php" method="post">
                                     <div class="modal-header">
-                                        <!-- Try add in the genres as category pills next to the title in a row. Perhaps also use on the base card? -->
                                         <h1 class="modal-title fs-4"><?= $product->getName() ?></h1>
                                         <p class="gameGenre"><?= $product->getGenre() ?></p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- Idea: Use iframe or API instead of image to call to a YT trailer video for the selected game? -->
-                                        <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
+                                        <iframe width="100%" height="350" src=<?= $product->getTrailer_link() ?>></iframe>
                                         <div>
                                             <p class="fs-5 text-center">Description:</p>
                                             <p><?= $product->getDescription() ?></p>
                                             <p class="display-5 lh-1 mb-1">R <?= $product->getPrice() ?></p>
-
                                             <p class="fs-5 text-center">Play <?= $product->getName() ?> <i>today!</i></p>
-
                                             <!-- Hidden field for productID -->
                                             <input type="hidden" name="productId" value="<?= $product->getId() ?>">
                                         </div>
@@ -177,26 +169,22 @@ $latestProducts = Product::displayLatest();
                     </div>
                     <!-- Modal -->
                     <div class="modal fade" id="productModal<?= $product->getId() ?>" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
 
                                 <form action="./processing/process-session.php" method="post">
                                     <div class="modal-header">
-                                        <!-- Try add in the genres as category pills next to the title in a row. Perhaps also use on the base card? -->
                                         <h1 class="modal-title fs-4"><?= $product->getName() ?></h1>
                                         <p class="gameGenre"><?= $product->getGenre() ?></p>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- Idea: Use iframe or API instead of image to call to a YT trailer video for the selected game? -->
-                                        <img src="./static/images/products/<?= $product->getImage() ?>" class="card-img-top product-image" alt="<?= $product->getName() ?>">
+                                        <iframe width="100%" height="350" src=<?= $product->getTrailer_link() ?>></iframe>
                                         <div>
                                             <p class="fs-5 text-center">Description:</p>
                                             <p><?= $product->getDescription() ?></p>
                                             <p class="display-5 lh-1 mb-1">R <?= $product->getPrice() ?></p>
-
                                             <p class="fs-5 text-center">Play <?= $product->getName() ?> <i>today!</i></p>
-
                                             <!-- Hidden field for productID -->
                                             <input type="hidden" name="productId" value="<?= $product->getId() ?>">
                                         </div>
@@ -227,11 +215,6 @@ $latestProducts = Product::displayLatest();
 
         </div>
         <!-- New Additions GAMES Display END -->
-
-
-
-
-
 
     </main>
 

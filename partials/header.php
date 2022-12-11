@@ -1,12 +1,6 @@
 <?php
+
 include __DIR__ . "/head.php";
-
-// Check if the user is already logged in, if yes then redirect them to homepage
-// if(!isset($_SESSION["LoggedInUser"])){
-
-//     header("Location: ./index.php");
-//     exit;
-// }
 
 ?>
 
@@ -46,8 +40,7 @@ include __DIR__ . "/head.php";
                     <li class="nav-item">
                         <a class="nav-link" href="./login.php">Login</a>
                     </li>
-                <?php endif ?>
-                    
+                <?php endif ?>   
             </ul>
 
         </div>

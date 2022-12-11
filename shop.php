@@ -15,8 +15,6 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
     $productID = Product::getAllProducts();
 }
 
-
-
 ?>
 
 
@@ -98,7 +96,6 @@ if (isset($_POST['PC']) || isset($_POST['PLAYSTATION']) || isset($_POST['XBOX'])
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- Idea: Use iframe or API instead of image to call to a YT trailer video for the selected game? -->
                                         <iframe width="100%" height="350" src=<?= $product->getTrailer_link() ?>></iframe>
                                         <div>
                                             <p class="fs-5 text-center">Description:</p>

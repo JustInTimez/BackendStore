@@ -4,8 +4,6 @@ include __DIR__ . "/config.php";
 
 class UserDAO {
 
-
-
     // ========================= DB CRUD METHODS =========================
 
 
@@ -90,13 +88,5 @@ class UserDAO {
         }
         
     }
-
-      
-
-
-
-
-
-
 
 }
