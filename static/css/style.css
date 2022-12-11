@@ -12,10 +12,51 @@ body {
     min-height: 100vh;
 }
 
+.navbar .navbar-nav .nav-link:hover {
+    color: #c28422;
+}
 
-/* .product-image {
+.slogan-text {
+    color: #c28422;
+}
+
+.card-size {
+    width: 85%;
+    height: 30%;
+
+}
+
+.gameGenre {
+    font-size: 14px;
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 3px 8px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 16px;
+    margin: 0;
+    margin-left: 6px;
+}
+
+.product-image {
     object-fit: cover;
-} */
+}
+
+.maps-container {
+    text-align: center;
+    overflow: hidden;
+}
+
+.maps-container iframe {
+    height: 300px;
+    width: 100%;
+    /* position:absolute; */
+}
+
+.google-map {
+    display: absolute;
+}
 
 
 /* Footer section */

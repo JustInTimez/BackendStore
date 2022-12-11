@@ -20,9 +20,6 @@ class User {
 
     public function __construct($id, $fname, $lname, $email, $password, $contact_no, $dob){
 
-        // Call to DAO
-        // $stmt = UserDAO::fetchUser($id);
-
         $this->id = $id;
         $this->fname = $fname;
         $this->lname = $lname;
@@ -38,40 +35,44 @@ class User {
     public static function userRegister() {
         $result = UserDAO::createUser();
         
-        if ($result == true) {
-            
-        echo "New user created successfully";
+        if ($result) {
+            $_SESSION['LoggedInUser'] = $result;
+            $_SESSION['Cart'] = [];
 
-        header("Location: ../shop.php");
-        exit();
+            header("Location: ../shop.php");
+            exit();
 
         }
     }
 
     public static function userLogin() {
-
-
-
-
-
+        $userLogin = UserDAO::fetchLogin();
         
+        if ($userLogin == true) {
+            $_SESSION['LoggedInUser'] = $userLogin;
+            $_SESSION['Cart'] = [];
+
+            echo "Matched password, logging in...";
+
+            header("Location: ../shop.php");
+            exit();
+
+        } else {
+            
+            // Auth failed so user gets taken back to login page
+            echo "Invalid password or email. Taking you back...";
+
+            header("Location: ../login.php");
+            exit();
+
+
+        }
     }
 
-
-
-
-
-
-
-
-
-
-
-    // ==================== GETTERS & SETTERS ====================
-
-    
-
-
-
+    public static function userLogout() {
+        if(session_destroy()) {
+            header("Location: ./index.php");
+         }
+    }
 
 }

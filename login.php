@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<?php include __DIR__ . "/partials/head.php";
-
-
-// Check if the user is already logged in, if yes then redirect them to homepage
-// if (isset($_SESSION["LoggedInUser"]) && $_SESSION["LoggedInUser"] === true) {
-//     header("location: ./index.php");
-//     exit;
-// }
+<?php include __DIR__ . "/partials/header.php";
 
 ?>
 
 <body>
 
     <!-- Hero -->
-    <div class="jumbotron jumbotron-fluid text-center bg-light d-flex align-items-center justify-content-center">
-        <div class="container mt-5">
-            <h1 class="mb-3 mt-5">Register or Login to continue!</h1>
-            <p class="mb-3">Want to buy? Create an account or log in</p>
+    <div class="jumbotron mt-5 p-3 p-md-5 text-white bg-dark">
+        <div class="col-md-12 px-0">
+            <h1 class="display-4">So, you want in, huh? 😎</h1>
+            <p class="lead my-3">Great choice. I like your style!</p>
         </div>
     </div>
     <!-- Hero END -->
@@ -49,7 +41,7 @@
             </div>
 
             <div class="col-lg-6">Login:
-                <form action="/processing/process-login.php" method="post">
+                <form action="./processing/process-login.php" method="post">
                     <div class="mb-3">
                         <label for="InputEmail" class="form-label">Email*</label>
                         <input type="email" class="form-control" name="LoginEmail" id="InputEmail" required>

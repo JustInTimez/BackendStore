@@ -1,10 +1,8 @@
 <?php
 
-include __DIR__ . "/config.php"; 
+include __DIR__ . "/config.php";
 
 class ProductDAO {
-
-
 
     // ========================= DB CRUD METHODS =========================
 
@@ -27,7 +25,6 @@ class ProductDAO {
     public static function fetchAllProducts() {
         global $connect;
 
-        // Begin prepare statement
         $sql = "SELECT id FROM products";
         $stmt = $connect->prepare($sql);
         $stmt->execute();
@@ -36,12 +33,26 @@ class ProductDAO {
         return $products;
     }
 
+    public static function featuredProducts() {
+        global $connect;
 
+        $sql = "SELECT id FROM products ORDER BY RAND() LIMIT 2";
+        $stmt = $connect->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $featProducts = $result->fetch_all(MYSQLI_ASSOC);
+        return $featProducts;
+    }
 
+    public static function latestAdditions() {
+        global $connect;
 
-
-
-
-
+        $sql = "SELECT id FROM products WHERE add_date >= 3 LIMIT 3";
+        $stmt = $connect->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $latestProducts = $result->fetch_all(MYSQLI_ASSOC);
+        return $latestProducts;
+    }
 
 }

@@ -4,6 +4,6 @@ ini_set('display_errors', 'On');
 
 session_start();
 
-include __DIR__ . '/../model/User.php';
+include __DIR__ . '/../model/Order.php';
 
-User::userRegister();
+Order::clearCart();
